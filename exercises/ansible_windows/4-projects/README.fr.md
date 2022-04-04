@@ -65,21 +65,6 @@ Remplissez le formulaire avec les valeurs suivantes
 
 ![Survey creating](images/4-survey-created.png)
 
-Étape 6:
---------
-
-Selectionnez `ADD` ![Add](images/at_add.png)
-
-Étape 7:
---------
-
-Selectionnez `ENREGISTRER` ![Add](images/at_save.png)
-
-Étape 8:
---------
-
-De retour sur la page principale du modèle de travail, sélectionnez ENREGISTRER
-![Add](images/at_save.png) again.
 
 Lancer une tâche
 ================

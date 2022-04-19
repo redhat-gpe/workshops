@@ -14,6 +14,7 @@
   gather_facts: false
   vars:
     as3_uri: "https://github.com/F5Networks/f5-appsvcs-extension/releases"
+    ansible_python_interpreter: "{{ansible_playbook_python}}"
   tasks:
     - include_role:
         name: ../roles/f5_setup

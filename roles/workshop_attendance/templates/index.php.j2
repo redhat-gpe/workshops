@@ -391,9 +391,10 @@ function display_student($student) {
       <td>password:</td>
       <td><code>" . $student['password'] . "</code></td>
     </tr>
-  </table>";
+  </table>
     {% endif %}
   {% endif %}
+  ";
   {% if workshop_type == "windows" or workshop_type == "configascode" %}
   print '<div id="section_title">Git access</div>
   To login to the git server via your web browser please go here:<br>
@@ -425,7 +426,7 @@ function display_student($student) {
     </tr>
     <tr>
       <td>username:</td>
-      <td><code>admin}</code></td>
+      <td><code>admin</code></td>
     </tr>
     <tr>
       <td>password:</td>

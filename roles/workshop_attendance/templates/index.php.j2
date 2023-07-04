@@ -106,7 +106,7 @@ if (isset($_GET['logout']) || (isset($student['email']) && $student['email'] != 
                         <div class="col-sm-4">
                             <a target=_blank href="https://aap2.demoredhat.com/exercises/ansible_network">Network Exercises</a>
                         </div>
-    
+
                         <div class="col-sm-4">
                             <a target=_blank href="https://aap2.demoredhat.com/decks/ansible_network.pdf">Network Presentation Deck</a>
                         </div>
@@ -118,7 +118,7 @@ if (isset($_GET['logout']) || (isset($student['email']) && $student['email'] != 
                         <div class="col-sm-4">
                             <a target=_blank href="https://aap2.demoredhat.com/exercises/ansible_f5">Ansible F5 Exercises</a>
                         </div>
-    
+
                         <div class="col-sm-4">
                             <a target=_blank href="https://aap2.demoredhat.com/decks/ansible_f5.pdf">Ansible F5 Deck</a>
                         </div>
@@ -224,7 +224,7 @@ if (isset($_GET['logout']) || (isset($student['email']) && $student['email'] != 
                       <li>Red Hat partners can join us on <a href=”https://join.slack.com/t/ansiblenetwork/shared_invite/zt-3zeqmhhx-zuID9uJqbbpZ2KdVeTwvzw”>external Slack.</a></li>
                       <li>For issues with Red Hat Product Demo System (RHPDS), urgent upcoming workshops, and so on, please open an issue <a href="https://red.ht/RHPDS-Request">here</a>.
                     </ul>
-    
+
                     <div class="row">
                         <div class="col-sm-4">
                             <a target=_blank href="https://automationiberia.github.io/controller-casc-cd/controller-casc-cd/">Automation Controller configuration Continuous Deployment with CaC Workshop</a>
@@ -353,7 +353,7 @@ function display_student($student) {
       <div class='content'>
         <p>
   {% if code_server is defined and code_server|bool %}
-  {% if workshop_type == 'configascode_cd' %}
+    {% if workshop_type == 'configascode_cd' %}
   <div id='section_title'>VS Code access (dev)</div>
   To login to Visual Studio Code via your web browser please go here:<br>
   <table>
@@ -379,7 +379,7 @@ function display_student($student) {
       <td><code>" . $student['password'] . "</code></td>
     </tr>
   </table>";
-  {% else %}
+    {% else %}
   <div id='section_title'>VS Code access</div>
   To login to Visual Studio Code via your web browser please go here:<br>
   <table>
@@ -392,7 +392,7 @@ function display_student($student) {
       <td><code>" . $student['password'] . "</code></td>
     </tr>
   </table>";
-  {% endif %}
+    {% endif %}
   {% endif %}
   {% if workshop_type == "windows" or workshop_type == "configascode" %}
   print '<div id="section_title">Git access</div>
@@ -415,7 +415,7 @@ function display_student($student) {
 
   print '<div id="tower_info">
   {% if controllerinstall is defined and controllerinstall|bool %}
-  {% if workshop_type == 'configascode_cd' %}
+    {% if workshop_type == 'configascode_cd' %}
   <div id="section_title">Automation controller (dev)</div>
   To login to the Automation controller WebUI use the following credentials:<br>
   <table>
@@ -452,18 +452,18 @@ function display_student($student) {
   <div id="section_title">Automation controller</div>
   To login to the Automation controller WebUI use the following credentials:<br>
   <table>
-  {% if dns_type != 'none' %}
+    {% if dns_type != 'none' %}
     <tr>
   <td>WebUI link:</td>
   <td><a target=_blank href="https://student' . $student['id'] . '.{{ ec2_name_prefix }}.{{ workshop_dns_zone }}">https://student' . $student['id'] . '.{{ ec2_name_prefix }}.{{ workshop_dns_zone }}</a></td>
     </tr>
-  {% endif %}
-  {% if dns_type == 'none' %}
+    {% endif %}
+    {% if dns_type == 'none' %}
     <tr>
   <td>UI link:
   <td><a target=_blank href="https://' . $student['ip'] . '">https://' . $student['ip'] . '</a></td>
     </tr>
-  {% endif %}
+    {% endif %}
     <tr>
       <td>username:</td>
       <td><code>{% if workshop_type == "windows" %}student' . $student['id'] . '{% else %}admin{% endif %}</code></td>
@@ -473,7 +473,7 @@ function display_student($student) {
       <td><code>{{admin_password}}</code></td>
     </tr>
   </table>
-  {% endif %}
+    {% endif %}
   {% endif %}
   {% if workshop_type == "configascode" %}
   <div id="section_title">Private automation hub</div>
@@ -497,18 +497,18 @@ function display_student($student) {
   <div id="section_title">Red Hat Satellite </div>
   To login to the Satellite WebUI use the following credentials:<br>
   <table>
-  {% if dns_type != 'none' %}
+    {% if dns_type != 'none' %}
     <tr>
   <td>WebUI link:</td>
   <td><a target=_blank href="https://student' . $student['id'] . '-sat.{{ ec2_name_prefix }}.{{ workshop_dns_zone }}">https://student' . $student['id'] . '-sat.{{ ec2_name_prefix }}.{{ workshop_dns_zone }}</a></td>
     </tr>
-  {% endif %}
-  {% if dns_type == 'none' %}
+    {% endif %}
+    {% if dns_type == 'none' %}
     <tr>
   <td>UI link:
   <td><a target=_blank href="https://' . $student['ip'] . '">https://' . $student['ip'] . '</a></td>
     </tr>
-  {% endif %}
+    {% endif %}
     <tr>
       <td>username:</td>
       <td><code>{% if workshop_type == "windows" %}student' . $student['id'] . '{% else %}admin{% endif %}</code></td>
@@ -523,18 +523,18 @@ function display_student($student) {
   <div id="section_title">Red Hat Satellite </div>
   To login to the Satellite WebUI use the following credentials:<br>
   <table>
-  {% if dns_type != 'none' %}
+    {% if dns_type != 'none' %}
     <tr>
   <td>WebUI link:</td>
   <td><a target=_blank href="https://student' . $student['id'] . '-sat.{{ ec2_name_prefix }}.{{ workshop_dns_zone }}">https://student' . $student['id'] . '-sat.{{ ec2_name_prefix }}.{{ workshop_dns_zone }}</a></td>
     </tr>
-  {% endif %}
-  {% if dns_type == 'none' %}
+    {% endif %}
+    {% if dns_type == 'none' %}
     <tr>
   <td>UI link:
   <td><a target=_blank href="https://' . $student['ip'] . '">https://' . $student['ip'] . '</a></td>
     </tr>
-  {% endif %}
+    {% endif %}
     <tr>
       <td>username:</td>
       <td><code>{% if workshop_type == "windows" %}student' . $student['id'] . '{% else %}admin{% endif %}</code></td>
@@ -549,18 +549,18 @@ function display_student($student) {
   <div id="section_title">RHEL Web Console</div>
   To login to the RHEL web console on the AAP2 controller use the following credentials:<br>
   <table>
-  {% if dns_type != 'none' %}
+    {% if dns_type != 'none' %}
     <tr>
   <td>WebUI link:</td>
   <td><a target=_blank href="https://student' . $student['id'] . '.{{ ec2_name_prefix }}.{{ workshop_dns_zone }}:9090">https://student' . $student['id'] . '.{{ ec2_name_prefix }}.{{ workshop_dns_zone }}:9090</a></td>
     </tr>
-  {% endif %}
-  {% if dns_type == 'none' %}
+    {% endif %}
+    {% if dns_type == 'none' %}
     <tr>
   <td>UI link:
   <td><a target=_blank href="https://' . $student['ip'] . ':9090">https://' . $student['ip'] . ':9090</a></td>
     </tr>
-  {% endif %}
+    {% endif %}
     <tr>
       <td>username:</td>
       <td><code>student</code></td>
@@ -593,6 +593,7 @@ function display_student($student) {
     </table>
     {% endif %}
     </div>';
+  {% endif %}
   {% if workshop_type == "windows" %}
   {% else %}
   print '<div id="section_title"><a data-toggle="collapse" href="#collapse1">SSH access&#8629;</a></div><div id="collapse1" class="panel-collapse collapse">
@@ -608,7 +609,7 @@ function display_student($student) {
       <td>password:</td>
       <td><code>' . $student['password'] . '</code></td>
     </tr>
-    {% if workshop_type == 'configascode_cd' %}
+      {% if workshop_type == 'configascode_cd' %}
     <tr>
       <td>IP Address (dev):</td>
       <td><code>' . $student['ip_dev'] . '</code></td>
@@ -617,33 +618,34 @@ function display_student($student) {
       <td>IP Address (pro):</td>
       <td><code>' . $student['ip_pro'] . '</code></td>
     </tr>
-    {% else %}
+      {% else %}
     <tr>
       <td>IP Address:</td>
       <td><code>' . $student['ip'] . '</code></td>
     </tr>
-    {% endif %}
+      {% endif %}
   </table>
   </div>
   <div id="example_login">
-  {% if workshop_type == 'configascode_cd' %}
+    {% if workshop_type == 'configascode_cd' %}
   Using IP addresses:
   <pre><code>ssh {{ student_user }}@' . $student['ip_dev'] . '</code></pre>
   <pre><code>ssh {{ student_user }}@' . $student['ip_pro'] . '</code></pre>
-  {% if dns_type != 'none' %}
+      {% if dns_type != 'none' %}
   Using DNS:<br>
   <pre><code>ssh {{ student_user }}@' . $student['controller_dev'] . '</code></pre>
   <pre><code>ssh {{ student_user }}@' . $student['controller_pro'] . '</code></pre>
-  {% endif %}
-  {% else %}
+      {% endif %}
+    {% else %}
   <pre><code>ssh {{ student_user }}@' . $student['ip'] . '</code></pre>
-  {% if dns_type != 'none' %}
+      {% if dns_type != 'none' %}
   DNS: student' . $student['id'] . '.{{ ec2_name_prefix }}.{{ workshop_dns_zone }}<br>
   <pre><code>ssh {{ student_user }}@student' . $student['id'] . '.{{ ec2_name_prefix }}.{{ workshop_dns_zone }}</code></pre>
-  {% endif %}
+      {% endif %}
   </div>
   </div>
   </div>';
+    {% endif %}
   {% endif %}
 
   print "</div></div>";

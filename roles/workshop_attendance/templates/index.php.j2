@@ -574,7 +574,7 @@ function display_student($student) {
   </div>
   {% if workshop_type == 'devops' %} Lab Guide: <a target=_blank href="http://student' . $student['id'] . '.{{ ec2_name_prefix }}.{{ workshop_dns_zone }}:8888">http://student' . $student['id'] . '.{{ ec2_name_prefix }}.{{ workshop_dns_zone }}:8888</a><br>{% endif %}';
     print '<div id="hub_info">
-    {% if automation_hub is defined and automation_hub|bool and workshop_type != 'configascode' %}
+  {% if automation_hub is defined and automation_hub|bool and workshop_type != 'configascode' %}
     <div id="section_title">Private automation Hub</div>
     To login to the Private Automation Hub WebUI use the following credentials:<br>
     <table>
@@ -591,9 +591,8 @@ function display_student($student) {
         <td><code>{{ admin_password }}</code></td>
       </tr>
     </table>
-    {% endif %}
-    </div>';
   {% endif %}
+    </div>';
   {% if workshop_type == "windows" %}
   {% else %}
   print '<div id="section_title"><a data-toggle="collapse" href="#collapse1">SSH access&#8629;</a></div><div id="collapse1" class="panel-collapse collapse">

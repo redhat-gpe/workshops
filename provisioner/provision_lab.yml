@@ -175,31 +175,6 @@
           ===================
 
           - Workshop name is {{ ec2_name_prefix }}
-          - Instructor inventory is located at  {{ playbook_dir }}/{{ ec2_name_prefix }}/instructor_inventory.txt
-          - Private key is located at {{ playbook_dir }}/{{ ec2_name_prefix }}/{{ ec2_name_prefix }}-private.pem
-          - {{ hostvars['attendance-host'].login_website_information | default("attendance feature is not functioning") }}
-          - Admin password: {{ admin_password }}
-
-          FAILURES
-          ===================
-          {{ dns_information }}
-          {{ callback_information }}
-
-    - name: Print Summary Information
-      debug:
-        msg: "{{ summary_information }}"
-
-    - name: Print Summary Information
-      debug:
-        msg: "user.info: {{ summary_information }}"
-
-    - name: set facts for output
-      set_fact:
-        summary_information: |
-          PROVISIONER SUMMARY
-          ===================
-
-          - Workshop name is {{ ec2_name_prefix }}
           {% if not rhpds_info_output | default(false) | bool %}
           - Instructor inventory is located at  {{ playbook_dir }}/{{ ec2_name_prefix }}/instructor_inventory.txt
           - Private key is located at {{ playbook_dir }}/{{ ec2_name_prefix }}/{{ ec2_name_prefix }}-private.pem

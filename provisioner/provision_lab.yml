@@ -19,7 +19,7 @@
           include_role:
             name: ../roles/aap_download
           vars:
-            aap_download_url: "{{ controller_bundle_installer.url }}"
+            provided_sha_value: "d615652db2623dd18256d2f67940406c8d5e8d5fc17368a3c396f7c187fd45fe"
           when:
             - workshop_type is match('configascode_cd')
             - not pre_build|bool

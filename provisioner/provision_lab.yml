@@ -18,6 +18,15 @@
         - name: download AAP
           include_role:
             name: ../roles/aap_download
+          vars:
+            aap_download_url:
+          when:
+            - workshop_type is match('configascode_cd')
+            - not pre_build|bool
+
+        - name: download AAP
+          include_role:
+            name: ../roles/aap_download
           when: not pre_build|bool
 
       rescue:

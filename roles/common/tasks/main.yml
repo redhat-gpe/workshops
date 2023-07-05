@@ -20,6 +20,6 @@
 
 - name: configure hostname
   ansible.builtin.hostname:
-    name: "{{ short_name|default('automation-controller') }}.example.com"
+    name: "{{ given_record | default(short_name|default('automation-controller') + '.example.com') }}"
 
 - meta: flush_handlers

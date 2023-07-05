@@ -95,6 +95,12 @@
       include_role:
         name: ../roles/user_accounts
 
+    - name: custom names for the dns entries
+      set_fact:
+        given_record: "{{ student }}-{{ 'dev' if (inventory_hostname | regex_replace('^.*-ansible-', '') is match('1')) else 'pro' }}.{{ ec2_name_prefix|lower }}.{{ workshop_dns_zone }}"
+      when:
+        - workshop_type is match('configascode_cd')
+
     - name: configure common role
       include_role:
         name: ../roles/common
@@ -121,12 +127,6 @@
         - code_server
         - controllerinstall is defined
         - controllerinstall
-
-    - name: custom names for the dns entries
-      set_fact:
-        given_record: "{{ student }}-{{ 'dev' if (inventory_hostname | regex_replace('^.*-ansible-', '') is match('1')) else 'pro' }}.{{ ec2_name_prefix|lower }}.{{ workshop_dns_zone }}"
-      when:
-        - workshop_type is match('configascode_cd')
 
     - name: add dns entires for all student control nodes
       include_role:

@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `name` varchar(128) DEFAULT '',
   `email` varchar(128) DEFAULT '',
   `id` int(12) NOT NULL DEFAULT '0',
-{% if workshop_type == 'configascode_cd' %}
+{%- if workshop_type == 'configascode_cd' %}
   `ip_dev` varchar(15) DEFAULT '',
   `ip_pro` varchar(15) DEFAULT '',
   `vscode_dev` varchar(512) DEFAULT '',
@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `vscode_pro_display` varchar(512) DEFAULT '',
   `controller_dev` varchar(512) DEFAULT '',
   `controller_pro` varchar(512) DEFAULT '',
-{% else %}
+{%- else %}
   `ip` varchar(15) DEFAULT '',
   `vscode` varchar(512) DEFAULT '',
   `vscode_display` varchar(512) DEFAULT '',

@@ -171,7 +171,7 @@
   become: false
   gather_facts: false
   tasks:
-    - {include_role: {name: ../roles/tower_request}, when: student_total > 9}
+    - {include_role: {name: ../roles/tower_request}, when: student_total|int > 9}
 
 - name: print out information for instructor
   hosts: localhost

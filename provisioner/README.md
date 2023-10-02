@@ -95,7 +95,7 @@ ec2_region: us-east-1
 # name prefix for all the VMs
 ec2_name_prefix: TESTWORKSHOP
 
-# creates student_total of workbenches for the workshop
+# creates student_total|int of workbenches for the workshop
 student_total: 2
 
 # Set the right workshop type, like network, rhel or f5 (see above)

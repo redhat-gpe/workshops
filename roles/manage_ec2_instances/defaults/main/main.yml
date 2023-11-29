@@ -71,9 +71,7 @@ ec2_info:
     volume:
       - device_name: /dev/xvda
         ebs:
-          volume_type: gp3
-          iops: 1000
-          throughput: 125
+          volume_type: gp2
           volume_size: 8
   checkpoint_mgmt:
     owners: 679593333241
